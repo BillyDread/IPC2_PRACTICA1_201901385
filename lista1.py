@@ -47,7 +47,7 @@ class ListaDoble1:
                 aux.anterior.siguiente = game
                 aux.anterior = game
 
-    def ordenarBurbuja(self):
+    def ordenarBurbuja1(self):
         aux = self.primero
         while aux is not None:
             aux2 = aux.siguiente
@@ -68,7 +68,7 @@ class ListaDoble1:
         if self.primero is None:
             print("La lista esta vacia")
         else:
-            archivo = open("salidas.xml", "a")
+            archivo = open("externo.xml", "a")
             archivo.write("\n\t<ListadoJuegos>\n")
 
             aux = self.primero

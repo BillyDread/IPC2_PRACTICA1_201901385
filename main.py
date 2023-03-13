@@ -5,7 +5,10 @@ import xml.etree.ElementTree as ET
 
 if __name__ == '__main__':
 
-    tree = ET.parse("/Users/billyanderson/Downloads/Ejemplo-2.xml")
+    print(" ")
+    direccion = input("Ingrese la ruta del archivo: \n")
+    tree = ET.parse(direccion)
+    
     root = tree.getroot()
 
     lista = ListaDoble()
@@ -24,16 +27,24 @@ if __name__ == '__main__':
         for LOS in DE.findall('Juego'):
             codigo = LOS.find('codigo').text
             nombre = LOS.find('nombre').text
+            #lista2.insertarOrdenado(LOS)
             lista1.insertarOrdenado(codigo, nombre)
             for BESOS in LOS.findall('Plataformas'):
                 lista2 = ListaDoble2()
                 for QUE in BESOS.findall('Plataforma'):
                     DI = QUE.find('codigo').text
                     lista2.insertarOrdenado(DI)
+                    #lista1.insertarOrdenado(codigo, nombre)
                 lista1.escribirXML(lista2)
+                
 
+
+    #lista1.ordenarBurbuja1()
+    print("-----------------")
     lista.mostrar()
     lista1.mostrar1()
     lista2.mostrar3()
     print("-----------------")
+    #lista.escribirXML()
+    
 

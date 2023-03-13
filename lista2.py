@@ -1,4 +1,5 @@
 from juegos import Plataformas
+from listad import ListaDoble
 
 class ListaDoble2:
     def __init__(self):
@@ -63,11 +64,11 @@ class ListaDoble2:
         if self.primero is None:
             print("La lista esta vacia")
         else:
-            archivo = open("salidas.xml", "a")
+            archivo = open("externo.xml", "a")
             aux = self.primero
             while aux is not None:
-                archivo.write("\n\t\t<Plataforma>\n")
+                archivo.write("\t\t\t\t<Plataforma>\n")
                 archivo.write("\t\t\t<codigo>" + aux.codigo + "</codigo>\n")
-                archivo.write("\t\t</Plataforma>\n")
+                archivo.write("\t\t\t</Plataforma>\n")
                 aux = aux.siguiente
             archivo.close()
